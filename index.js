@@ -91,14 +91,12 @@ module.exports = React.createClass({
         React.createElement(
           "div",
           { className: "react-toggle-track-check" },
-          this.renderChecked,
-          React.createElement(Check, null)
+          this.renderCheckedLabel()
         ),
         React.createElement(
           "div",
           { className: "react-toggle-track-x" },
-          this.renderUnchecked,
-          React.createElement(X, null)
+          this.renderUncheckedLabel()
         )
       ),
       React.createElement("div", { className: "react-toggle-thumb" }),
@@ -112,7 +110,7 @@ module.exports = React.createClass({
     );
   },
 
-  renderChecked: function renderChecked() {
+  renderCheckedLabel: function renderCheckedLabel() {
     return this.props.checkedLabel ? React.createElement(
       "span",
       null,
@@ -120,7 +118,7 @@ module.exports = React.createClass({
     ) : React.createElement(Check, null);
   },
 
-  renderUnchecked: function renderUnchecked() {
+  renderUncheckedLabel: function renderUncheckedLabel() {
     return this.props.uncheckedLabel ? React.createElement(
       "span",
       null,
