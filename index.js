@@ -29,7 +29,9 @@ module.exports = React.createClass({
     value: React.PropTypes.string,
     id: React.PropTypes.string,
     "aria-labelledby": React.PropTypes.string,
-    "aria-label": React.PropTypes.string
+    "aria-label": React.PropTypes.string,
+    checkedLabel: React.PropTypes.string,
+    uncheckedLabel: React.PropTypes.string
   },
 
   getInitialState: function getInitialState() {
@@ -89,11 +91,13 @@ module.exports = React.createClass({
         React.createElement(
           "div",
           { className: "react-toggle-track-check" },
+          this.renderChecked,
           React.createElement(Check, null)
         ),
         React.createElement(
           "div",
           { className: "react-toggle-track-x" },
+          this.renderUnchecked,
           React.createElement(X, null)
         )
       ),
@@ -106,5 +110,21 @@ module.exports = React.createClass({
         type: "checkbox"
       }, this.props))
     );
+  },
+
+  renderChecked: function renderChecked() {
+    return this.props.checkedLabel ? React.createElement(
+      "span",
+      null,
+      this.props.checkedLabel
+    ) : React.createElement(Check, null);
+  },
+
+  renderUnchecked: function renderUnchecked() {
+    return this.props.uncheckedLabel ? React.createElement(
+      "span",
+      null,
+      this.props.uncheckedLabel
+    ) : React.createElement(Check, null);
   }
 });

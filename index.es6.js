@@ -79,9 +79,11 @@ export default React.createClass({
       <div className={classes} onClick={this.handleClick}>
         <div className='react-toggle-track'>
           <div className='react-toggle-track-check'>
+            {this.renderChecked}
             <Check />
           </div>
           <div className='react-toggle-track-x'>
+            {this.renderUnchecked}
             <X />
           </div>
         </div>
@@ -96,5 +98,13 @@ export default React.createClass({
           {...this.props} />
       </div>
     )
+  },
+
+  renderChecked() {
+    return this.props.checkedLabel ? <span>{this.props.checkedLabel}</span> : <Check />;
+  },
+
+  renderUnchecked() {
+    return this.props.uncheckedLabel ? <span>{this.props.uncheckedLabel}</span> : <Check />;
   }
 })
