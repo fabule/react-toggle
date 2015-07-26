@@ -103,6 +103,6 @@ export default React.createClass({
   },
 
   renderUncheckedLabel() {
-    return this.props.uncheckedLabel ? <span>{this.props.uncheckedLabel}</span> : <Check />;
+    return this.props.uncheckedLabel ? <span>{this.props.uncheckedLabel}</span> : <X />;
   }
 })

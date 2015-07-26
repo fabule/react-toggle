@@ -123,6 +123,6 @@ module.exports = React.createClass({
       "span",
       null,
       this.props.uncheckedLabel
-    ) : React.createElement(Check, null);
+    ) : React.createElement(X, null);
   }
 });
