@@ -79,7 +79,7 @@ module.exports = React.createClass({
   render: function render() {
     var classes = classNames("react-toggle", {
       "react-toggle--checked": this.state.checked,
-      "react-toggle--hasFeedback": this.state.checked && this.props.hasFeedback,
+      "react-toggle--success": this.state.checked && this.props.hasFeedback,
       "react-toggle--focus": this.state.hasFocus,
       "react-toggle--disabled": this.props.disabled
     });
