@@ -112,7 +112,7 @@ module.exports = React.createClass({
 
   renderCheckedLabel: function renderCheckedLabel() {
     return this.props.checkedLabel ? React.createElement(
-      "span",
+      "label",
       null,
       this.props.checkedLabel
     ) : React.createElement(Check, null);
@@ -120,7 +120,7 @@ module.exports = React.createClass({
 
   renderUncheckedLabel: function renderUncheckedLabel() {
     return this.props.uncheckedLabel ? React.createElement(
-      "span",
+      "label",
       null,
       this.props.uncheckedLabel
     ) : React.createElement(X, null);
