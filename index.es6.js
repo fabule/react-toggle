@@ -20,6 +20,7 @@ export default React.createClass({
     name: React.PropTypes.string,
     value: React.PropTypes.string,
     id: React.PropTypes.string,
+    hasFeedback: React.PropTypes.bool,
     'aria-labelledby': React.PropTypes.string,
     'aria-label': React.PropTypes.string,
     checkedLabel: React.PropTypes.string,
@@ -71,6 +72,7 @@ export default React.createClass({
   render() {
     var classes = classNames('react-toggle', {
       'react-toggle--checked': this.state.checked,
+      'react-toggle--hasFeedback': this.state.checked && this.props.hasFeedback,
       'react-toggle--focus': this.state.hasFocus,
       'react-toggle--disabled': this.props.disabled
     });
